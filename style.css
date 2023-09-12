@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/*  ==== Instructions CSS ====  */
+.instructions{
+    border: 1.5px solid rgb(107, 104, 104);
+    padding: 1vmax;
+    margin: 1vmax;
+    border-radius: 6px;
+    background-color: rgb(48, 47, 47);
+    color: rgb(240, 240, 240);
+}
+
+/* ====  Control Pannel CSS ==== */
+
+
+
+.button-91 {
+    align-items: center;
+    background-color: initial;
+    background-image: linear-gradient(#464d55, #25292e);
+    border-radius: 8px;
+    border-width: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .1),0 3px 6px rgba(0, 0, 0, .05);
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    font-family: expo-brand-demi,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 18px;
+    height: 52px;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 32px;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all 150ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .button-91:hover {
+    box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;
+    opacity: .85;
+  }
+  
+  .button-91:active {
+    outline: 0;
+  }
+  
+  .button-91:focus {
+    box-shadow: rgba(0, 0, 0, .5) 0 0 0 3px;
+  }
+  
+  .open-door {
+      transform: translateX(-50%) ;
+  }
+  
+  .closed-door {
+      transform: translateX(0);
+  }
+
+
+
+/* ====  XRD Image CSS ==== */
+
+#xrd > div > .machine >img{
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+#xrd > div > .machine> .source {
+    position: absolute;
+    bottom: 15rem; 
+    left: 3.4rem;
+}
+
+ #xrd > div > .machine> .source > img{
+    height: 80px;
+}
+
+#xrd > div > .machine> .detector {
+    position: absolute;
+    bottom: 16.2rem; 
+    left: 13rem;
+}
+#xrd > div > .machine> .detector > img{
+    height: 60px;
+}
+
+
+
+#gate {
+    display: flex;
+    width: 13rem;
+    height: 11rem;
+    left: 42%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 999;
+    bottom: 14.3rem;
+}
+
+.door {
+    flex: 1;
+    background-color: transparent;
+    transition: transform 1s ease;
+    transform-origin: left center;
+    background-color: rgb(137, 160, 203);
+    opacity: 0.5;
+    border: 1.5px solid black;
+}
+
+.right-door {
+    transform-origin: right center;
+   
+}
+
+.left-door.opened {
+    transform: scaleX(0);
+    border: none;
+    
+}
+
+.right-door.opened {
+    transform: scaleX(0);
+    border: none;
+}
+
+@media screen and (max-width: 320px) {
+
+    #xrd > div > .machine> .source {
+        position: absolute;
+        bottom: 30.4rem; 
+        left: 3rem;
+    }
+    
+     #xrd > div > .machine> .source > img{
+        height: 40px;
+    }
+    
+    #xrd > div > .machine> .detector {
+        position: absolute;
+        bottom: 32.4rem; 
+        left: 10rem;
+    }
+    #xrd > div > .machine> .detector > img{
+        height: 40px;
+    }
+    #gate {
+        display: flex;
+        width: 10.5rem;
+        height: 9.3rem;
+        top: 9.3rem;
+        left: 24%;
+        overflow: hidden;
+        position: absolute;
+        z-index: 999;
+        
+    }
+    
+}
+
+@media screen and (min-width: 350px) and (max-width: 768px) {
+
+    #gate {
+        display: flex;
+        width: 13rem;
+        height: 11.5rem;
+        left: 24%;
+        overflow: hidden;
+        position: absolute;
+        z-index: 999;
+        bottom: 19.8rem;
+    }
+    
+}
+
+
+@media screen and (min-width: 768px) and (max-width:1024px) {
+
+    #xrd > div > .machine> .source {
+        position: absolute;
+        bottom: 30.4rem; 
+        left: 6.6rem;
+    }
+    
+     #xrd > div > .machine> .source > img{
+        height: 150px;
+    }
+    
+    #xrd > div > .machine> .detector {
+        position: absolute;
+        bottom: 32.4rem; 
+        left: 25.5rem;
+    }
+    #xrd > div > .machine> .detector > img{
+        height: 118px;
+    }
+
+    
+    
+    #gate {
+        display: flex;
+        width: 25rem;
+        height: 21.7rem;
+        left: 24.7%;
+        overflow: hidden;
+        position: absolute;
+        z-index: 999;
+        bottom: 20.7rem;
+    }
+    
+}
+
+
+
+
+
+/* ==== Output CSS ==== */
