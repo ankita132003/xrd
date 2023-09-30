@@ -306,15 +306,16 @@ startAnimationButton.addEventListener('click', function () {
 
     detectorRay.style.animationName = "rotateFromZeroToNeg45"
     sourceRay.style.animationName = "rotateFromZeroToPos45";
+    
     source.style.animationName = "moveUpDown";
-
+    detector.style.animationName = "oppMoveUpDown";
     setTimeout(function () {
 
         sourceRay.style.animationName = "rotateFromPos45ToZero";
         detectorRay.style.animationName = "rotateFromNeg45ToZero";
         
         source.style.animationName = "moveUpDownZeroToDown";
-
+        detector.style.animationName = "oppMoveUpDownZeroToDown";
     }, 5000);
 
     setTimeout(function () {
@@ -322,6 +323,7 @@ startAnimationButton.addEventListener('click', function () {
         detectorRay.style.animationName = "rotateFromZeroToNeg25";
 
         source.style.animationName = "moveUpDownToOriginal ";
+        detector.style.animationName = "oppMoveUpDownToOriginal";
     }, 10000);
 
 
