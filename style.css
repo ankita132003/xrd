@@ -1,11 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
+.body {
+    background-color: #dcd9d9;
+    padding-bottom: 1vmax;
+}
 
 /*  ==== Instructions CSS ====  */
-.instructions{
+.instructions {
     border: 1.5px solid rgb(107, 104, 104);
     padding: 1vmax;
     margin: 1vmax;
@@ -16,101 +20,525 @@
 
 /* ====  Control Pannel CSS ==== */
 
+#first-outer-row {
+    background-color: #afadad;
+    border: 2px solid rgb(168, 164, 164);
+    padding: 1vmax;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1vmax;
+}
 
-
-.button-91 {
-    align-items: center;
-    background-color: initial;
-    background-image: linear-gradient(#464d55, #25292e);
-    border-radius: 8px;
-    border-width: 0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .1),0 3px 6px rgba(0, 0, 0, .05);
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    display: inline-flex;
-    flex-direction: column;
-    font-family: expo-brand-demi,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    font-size: 18px;
-    height: 52px;
-    justify-content: center;
-    line-height: 1;
-    margin: 0;
-    outline: none;
-    overflow: hidden;
-    padding: 0 32px;
+#first-row {
     text-align: center;
-    text-decoration: none;
-    transform: translate3d(0, 0, 0);
-    transition: all 150ms;
-    vertical-align: baseline;
-    white-space: nowrap;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
+    margin-bottom: 1vmax;
+    background-color: #d9d9d9;
+    border: 2px solid rgb(168, 164, 164);
+    padding: 1vmax 0;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
 
-  .button-91:hover {
+.second-row {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#specimen {
+    width: min-content;
+    margin: 0 26%;
+    display: flex;
+}
+
+#door>div>button {
+    border-radius: 10px;
+    background-color: rgb(52, 51, 51);
+    color: aliceblue;
+}
+
+.button-91:hover {
     box-shadow: rgba(0, 1, 0, .2) 0 2px 8px;
     opacity: .85;
-  }
-  
-  .button-91:active {
-    outline: 0;
-  }
-  
-  .button-91:focus {
-    box-shadow: rgba(0, 0, 0, .5) 0 0 0 3px;
-  }
-  
-  .open-door {
-      transform: translateX(-50%) ;
-  }
-  
-  .closed-door {
-      transform: translateX(0);
-  }
+}
+
+
+.open-door {
+    transform: translateX(-50%);
+}
+
+.closed-door {
+    transform: translateX(0);
+}
+
+#second-col {
+    padding: 0 10%;
+    font-size: 13px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#standby-div>button {
+    width: 25px;
+    height: 20px;
+    background-color: #d1cece;
+    border-color: #b6b4b4;
+    border-radius: 50%;
+    margin-top: 20%;
+
+}
+
+#standby-div>button:hover {
+    background-color: #c6c3c3;
+    border-color: #c6c3c3;
+    cursor: pointer;
+}
+
+#power-div>button {
+    width: 80%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #111111;
+    background-color: #f2f2f2;
+    border: 2px solid rgb(135, 135, 135);
+}
+
+#power-div>button :hover {
+    background-color: #928f8f;
+    cursor: pointer;
+}
+
+#top-stats>.stats-div {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#top-stats>.stats-div>#stats-kv {
+    display: flex;
+    height: 30px;
+    margin-left: 20px;
+    padding-top: 0.5vmax;
+}
+
+#top-stats>.stats-div>#stats-ma {
+    display: flex;
+    padding-top: 0.5vmax;
+}
+
+
+#top-stats>.stats-div>#stats-kv>.stats-name>p {
+    border: 1px solid rgb(78, 76, 76);
+    padding: 3px 1vmax;
+    background-color: #c1c1c1;
+    border-radius: 8px 0 0 8px;
+}
+
+#top-stats>.stats-div>#stats-kv>.stats-value>p {
+    border: 1px solid rgb(78, 76, 76);
+    padding: 3px 1vmax;
+    background-color: #e2e2e2;
+    border-radius: 0 8px 8px 0;
+}
+
+#top-stats>.stats-div>#stats-ma>.stats-name>p {
+    border: 1px solid rgb(78, 76, 76);
+    padding: 3px 1vmax;
+    background-color: #c1c1c1;
+    border-radius: 8px 0 0 8px;
+}
+
+#top-stats>.stats-div>#stats-ma>.stats-value>p {
+    border: 1px solid rgb(78, 76, 76);
+    padding: 3px 1vmax;
+    background-color: #e2e2e2;
+    border-radius: 0 8px 8px 0;
+}
+
+
+#bottom-stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5vmax 2vmax;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 13px;
+}
+
+#stats-start {
+    display: flex;
+    justify-content: center;
+}
+
+#stats-start>.stats-value>button {
+    padding: 2px 7px;
+    background-color: #3c3b3b;
+    color: #fafafa;
+}
+
+#stats-start>.stats-value>button:hover {
+    background-color: #252424;
+}
+
+#stats-start>.stats-name {
+    border-top: 2px solid rgb(112, 108, 108);
+    border-bottom: 2px solid rgb(111, 108, 108);
+    height: 27.8px;
+    width: auto;
+    padding: 2px 7px;
+}
+
+
+#stats-end {
+    display: flex;
+    justify-content: center;
+}
+
+#stats-end>.stats-value>button {
+    padding: 2px 7px;
+    background-color: #3c3b3b;
+    color: #fafafa;
+}
+
+#stats-end>.stats-value>button:hover {
+    background-color: #252424;
+}
+
+#stats-end>.stats-name {
+    border-top: 2px solid rgb(112, 108, 108);
+    border-bottom: 2px solid rgb(111, 108, 108);
+    height: 27.8px;
+    width: auto;
+    padding: 2px 7px;
+}
+
+
+#step-options {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 2vmax;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#scantime-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#scantime-div>div>#scantime-value>p {
+    width: 100%;
+    padding: 0.5vmax 1vmax;
+    border: 1.5px solid rgb(129, 126, 126);
+    border-radius: 7px;
+}
+
+#bottom-row>button {
+    background-color: #cfcfcf;
+    border: 1.5px solid #8a8585;
+    color: #3b3a3a;
+    font-weight: 500;
+    height: 30px;
+    font-size: 12px;
+}
+
+#bottom-row>button:hover {
+    background-color: #c5c2c2;
+}
+
+@media screen and (max-width: 350px) {
+    #first-outer-row {
+        width: 96%;
+        margin: 0 1vmax;
+    }
+
+    #top-stats>.stats-div>#stats-kv {
+        display: flex;
+        height: 30px;
+        padding-top: 0.5vmax;
+    }
+
+    #top-stats>.stats-div>#stats-ma {
+        display: flex;
+        padding-top: 0.5vmax;
+        padding-right: 15px;
+    }
+
+    #bottom-stats {
+        padding: 0.5vmax 5vmax;
+    }
+}
+
+
+@media screen and (min-width: 350px) and (max-width: 768px) {
+    #first-outer-row {
+        width: 96%;
+        margin: 0 1vmax;
+    }
+
+    #top-stats>.stats-div>#stats-ma {
+        display: flex;
+        padding-top: 0.5vmax;
+        padding-right: 15px;
+    }
+
+    #bottom-stats {
+        padding: 0.5vmax 5vmax;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:1024px) {
+
+    #first-outer-row {
+        width: 96%;
+        margin: 0 1vmax;
+    }
+
+    #specimen {
+        margin: 0 35%;
+    }
+
+    #top-stats>.stats-div {
+        margin-top: 5px;
+    }
+
+    #second-col {
+        padding: 0 20%;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    #bottom-stats {
+        padding: 0.5vmax 15vmax;
+    }
+}
 
 
 
 /* ====  XRD Image CSS ==== */
 
-#xrd > div > .machine >img{
+#xrd {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgb(201, 201, 201);
     height: 100%;
-    width: 100%;
+    width: 40%;
+    margin-left: 1vmax;
+    background-color: #dfdfdf;
+    display: flex;
+    justify-content: center;
+}
+
+#xrd>div>.machine>img {
+    height: 3%;
+    width: 400px;
     max-width: 100%;
 }
 
-#xrd > div > .machine> .source {
+#xrd>div>.machine>.source {
     position: absolute;
-    bottom: 15rem; 
-    left: 3.4rem;
+    bottom: 17.2rem;
+    left: 3.8rem;
+
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
 }
 
- #xrd > div > .machine> .source > img{
+@keyframes moveUpDown {
+    0%{
+      transform: translateY(0) rotate(0deg);
+    }
+    50%{
+        left: 4rem;
+        transform: translateY(-15px) rotate(25deg);
+      }
+    100% {
+        left: 4.5rem;
+      transform: translateY(-30px) rotate(25deg);
+    }
+  }
+
+  @keyframes moveUpDownZeroToDown{
+    0%{
+        left: 4.3rem;
+        transform: translateY(-30px) rotate(25deg);
+      }
+     
+      50%{
+        transform: translateY(0px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(33px) rotate(-30deg);
+      }
+  }
+
+  @keyframes moveUpDownToOriginal{
+    0%{
+        transform: translateY(33px) rotate(-30deg);
+      }
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+  }
+
+#xrd>div>.machine>.source>img {
     height: 80px;
 }
 
-#xrd > div > .machine> .detector {
-    position: absolute;
-    bottom: 16.2rem; 
-    left: 13rem;
+.source-ray {
+    width: 63px;
+    height: 1px;
+    background-color: rgb(179, 10, 10);
+    transform: rotate(25deg);
+    transform-origin: 100% 0%;
+
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-fill-mode: backwards;
+    animation-iteration-count: 1;
 }
-#xrd > div > .machine> .detector > img{
+
+
+#xrd>div>.machine>.source-ray {
+    position: absolute;
+    bottom: 18.3rem;
+    left: 8.4rem;
+}
+
+
+
+@keyframes rotateFromZeroToPos45 {
+    0% {
+        transform: rotate(25deg);
+    }
+
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes rotateFromPos45ToZero {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes rotateFromZeroToPos25 {
+    0% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(25deg);
+    }
+}
+
+
+
+
+#xrd>div>.machine>.detector {
+    position: absolute;
+    bottom: 18.5rem;
+    left: 15rem;
+}
+
+
+#xrd>div>.machine>.detector>img {
     height: 60px;
 }
+
+.detector-ray {
+    width: 60px;
+    height: 1px;
+    background-color: rgb(179, 10, 10);
+    transform: rotate(-25deg);
+    transform-origin: 0% 0%;
+
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+#xrd>div>.machine>.detector-ray {
+    position: absolute;
+    bottom: 18.3rem;
+    left: 12.3rem;
+}
+
+@keyframes rotateFromZeroToNeg45 {
+    0% {
+        transform: rotate(-25deg);
+    }
+
+    100% {
+        transform: rotate(-50deg);
+    }
+}
+
+@keyframes rotateFromNeg45ToZero {
+    0% {
+        transform: rotate(-50deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes rotateFromZeroToNeg25 {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(-25deg);
+    }
+}
+
+
+
+#xrd>div>.machine>.circle {
+    width: 25px;
+    height: 8px;
+    background-color: rgb(165, 164, 164);
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #928f8f;
+    left: 11.5rem;
+    bottom: 18.2rem;
+}
+
+
+@keyframes moveSample {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-360%) translateX(0);
+    }
+
+    100% {
+        transform: translateY(-360%) translateX(0);
+    }
+}
+
 
 
 
 #gate {
     display: flex;
-    width: 13rem;
-    height: 11rem;
-    left: 42%;
+    width: 14rem;
+    height: 12.5rem;
+    left: 22.5%;
     overflow: hidden;
     position: absolute;
     z-index: 999;
-    bottom: 14.3rem;
+    bottom: 15.4rem;
 }
 
 .door {
@@ -118,20 +546,20 @@
     background-color: transparent;
     transition: transform 1s ease;
     transform-origin: left center;
-    background-color: rgb(137, 160, 203);
+    background-color: rgb(222, 228, 239);
     opacity: 0.5;
-    border: 1.5px solid black;
+    border: 1.5px solid rgb(211, 205, 205);
 }
 
 .right-door {
     transform-origin: right center;
-   
+
 }
 
 .left-door.opened {
     transform: scaleX(0);
     border: none;
-    
+
 }
 
 .right-door.opened {
@@ -141,92 +569,432 @@
 
 @media screen and (max-width: 320px) {
 
-    #xrd > div > .machine> .source {
-        position: absolute;
-        bottom: 30.4rem; 
-        left: 3rem;
+    #xrd {
+        height: 100%;
+        width: 96%;
+        margin: 1vmax;
     }
-    
-     #xrd > div > .machine> .source > img{
-        height: 40px;
-    }
-    
-    #xrd > div > .machine> .detector {
+
+    #xrd>div>.machine>.source {
         position: absolute;
-        bottom: 32.4rem; 
+        top: 7.3rem;
+        left: 2.7rem;
+    }
+
+    #xrd>div>.machine>.source>img {
+        height: 60px;
+    }
+
+    #xrd>div>.machine>.detector {
+        position: absolute;
+        top: 7rem;
         left: 10rem;
     }
-    #xrd > div > .machine> .detector > img{
-        height: 40px;
+
+    #xrd>div>.machine>.detector>img {
+        height: 50px;
     }
+
+
+
+    #xrd>div>.machine>.source-ray {
+        position: absolute;
+        top: 10.5rem;
+        left: 6rem;
+    }
+
+    #xrd>div>.machine>.detector-ray {
+        position: absolute;
+        top: 10.4rem;
+        left: 8.5rem;
+    }
+
+    .detector-ray {
+        width: 41px;
+        transform: rotate(-35deg);
+    }
+    .source-ray{
+        width: 42px;
+        transform: rotate(35deg);
+    }
+
     #gate {
         display: flex;
-        width: 10.5rem;
-        height: 9.3rem;
-        top: 9.3rem;
+        width: 10rem;
+        height: 9rem;
+        top: 3.7rem;
         left: 24%;
         overflow: hidden;
         position: absolute;
         z-index: 999;
-        
+
     }
-    
+
+
+    #xrd>div>.machine>.circle {
+        left: 7.8rem;
+        bottom: 12.8rem;
+    }
+
 }
 
-@media screen and (min-width: 350px) and (max-width: 768px) {
+@media screen and (min-width: 321px) and (max-width: 376px) {
+    #xrd {
+        height: 100%;
+        width: 96%;
+        margin: 1vmax;
+    }
+
+    #xrd>div>.machine>.source {
+        position: absolute;
+        top: 8.3rem;
+        left: 2.7rem;
+    }
+
+
+    #xrd>div>.machine>.detector {
+        position: absolute;
+        top: 8.3rem;
+        left: 11.4rem;
+    }
+
+    #xrd>div>.machine>.source-ray {
+        position: absolute;
+        top: 12rem;
+        left: 7.2rem;
+    }
+
+    #xrd>div>.machine>.detector-ray {
+        position: absolute;
+        top: 12rem;
+        left: 10rem;
+    }
+
+    .detector-ray {
+        width: 40px;
+        transform: rotate(-32deg);
+    }
+    .source-ray{
+        width: 46px;
+        transform: rotate(33deg);
+    }
+
+    #gate {
+        display: flex;
+        width: 11.5rem;
+        height: 10rem;
+        left: 23.8%;
+        top: 16.7%;
+        overflow: hidden;
+        position: absolute;
+        z-index: 999;
+    }
+    #xrd>div>.machine>.circle {
+        left: 9.2rem;
+        bottom: 14.5rem;
+    }
+
+}
+
+@media screen and (min-width: 376px) and (max-width: 390px) {
+
+    #xrd {
+        height: 100%;
+        width: 96%;
+        margin: 1vmax;
+    }
+
+    #xrd>div>.machine>.source {
+        position: absolute;
+        top: 9.5rem;
+        left: 3rem;
+    }
+
+
+    #xrd>div>.machine>.detector {
+        position: absolute;
+        top: 9.3rem;
+        left: 12.6rem;
+    }
+
+    #xrd>div>.machine>.source-ray {
+        position: absolute;
+        top: 12.9rem;
+        left: 7.6rem;
+    }
+
+    #xrd>div>.machine>.detector-ray {
+        position: absolute;
+        top: 12.9rem;
+        left: 10.6rem;
+    }
+
+    .detector-ray {
+        width: 48px;
+        transform: rotate(-25deg);
+    }
+    .source-ray{
+        width: 48px;
+        transform: rotate(25deg);
+    }
+
+    #gate {
+        display: flex;
+        width: 12.5rem;
+        height: 11rem;
+        left: 23.7%;
+        top: 16.5%;
+        overflow: hidden;
+        position: absolute;
+        z-index: 999;
+    }
+    #xrd>div>.machine>.circle {
+        left: 9.9rem;
+        bottom: 15.8rem;
+    }
+
+}
+
+@media screen and (min-width: 391px) and (max-width: 767px) {
+
+    #xrd {
+        height: 100%;
+        width: 96%;
+        margin: 1vmax;
+    }
+
+    #xrd>div>.machine>.source {
+        position: absolute;
+        top: 10.3rem;
+        left: 3.3rem;
+    }
+
+
+    #xrd>div>.machine>.detector {
+        position: absolute;
+        top: 10.3rem;
+        left: 13.4rem;
+    }
+
+    #xrd>div>.machine>.source-ray {
+        position: absolute;
+        top: 13.8rem;
+        left: 8rem;
+    }
+
+    #xrd>div>.machine>.detector-ray {
+        position: absolute;
+        top: 13.8rem;
+        left: 11.4rem;
+    }
+
+    .detector-ray {
+        width: 48px;
+        transform: rotate(-25deg);
+    }
+    .source-ray{
+        width: 48px;
+        transform: rotate(25deg);
+    }
 
     #gate {
         display: flex;
         width: 13rem;
         height: 11.5rem;
-        left: 24%;
+        left: 23.9%;
+        top: 16.5%;
         overflow: hidden;
         position: absolute;
         z-index: 999;
-        bottom: 19.8rem;
     }
-    
+    #xrd>div>.machine>.circle {
+        left: 10.5rem;
+        bottom: 16.8rem;
+    }
+
 }
 
 
-@media screen and (min-width: 768px) and (max-width:1024px) {
+@media screen and (min-width: 767px) and (max-width:1024px) {
 
-    #xrd > div > .machine> .source {
-        position: absolute;
-        bottom: 30.4rem; 
-        left: 6.6rem;
-    }
-    
-     #xrd > div > .machine> .source > img{
-        height: 150px;
-    }
-    
-    #xrd > div > .machine> .detector {
-        position: absolute;
-        bottom: 32.4rem; 
-        left: 25.5rem;
-    }
-    #xrd > div > .machine> .detector > img{
-        height: 118px;
+    #xrd {
+        height: 100%;
+        width: 97%;
+        margin: 1vmax;
     }
 
-    
-    
+    #xrd>div>.machine>img {
+        height: 100%;
+        width: 600px;
+        max-width: 100%;
+        margin: 0 5%;
+    }
+
+
+    #xrd>div>.machine>.source {
+        position: absolute;
+        bottom: 25rem;
+        left: 7.8rem;
+    }
+
+    #xrd>div>.machine>.source>img {
+        height: 135px;
+    }
+
+    #xrd>div>.machine>.detector {
+        position: absolute;
+        bottom: 27rem;
+        left: 24rem;
+    }
+
+    #xrd>div>.machine>.detector>img {
+        height: 103px;
+    }
+
+    #xrd>div>.machine>.source-ray {
+        position: absolute;
+        top: 22.5rem;
+        left: 15.7rem;
+    }
+
+    #xrd>div>.machine>.detector-ray {
+        position: absolute;
+        top: 22.5rem;
+        left: 20.7rem;
+    }
+
+    .detector-ray {
+        width: 80px;
+        transform: rotate(-25deg);
+    }
+    .source-ray{
+        width: 80px;
+        transform: rotate(25deg);
+    }
+
+
     #gate {
         display: flex;
-        width: 25rem;
-        height: 21.7rem;
-        left: 24.7%;
+        width: 21.2rem;
+        height: 18.6rem;
+        left: 26%;
         overflow: hidden;
         position: absolute;
         z-index: 999;
-        bottom: 20.7rem;
+        bottom: 23.3rem;
     }
-    
+    #xrd>div>.machine>.circle {
+        left: 20rem;
+        bottom: 27.5rem;
+    }
 }
-
 
 
 
 
 /* ==== Output CSS ==== */
+
+#output-sample {
+    margin-bottom: 1vmax;
+    border-radius: 8px;
+    height: 100%;
+}
+
+#output-sample>#output {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1vmax;
+    background-color: #cbcbcb;
+    border: 2px solid rgb(195, 195, 195);
+    border-radius: 8px;
+    height: 100%;
+    padding: 1vmax;
+}
+
+#output-sample>#output>#output1 {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    background-color: #e1e1e1;
+    border: 2px solid rgb(218, 218, 218);
+    border-radius: 8px;
+    height: 100%;
+    padding: 1vmax;
+    display: flex;
+    justify-content: center;
+}
+
+#output-sample>#output>#output1>div>h5 {
+    font-size: 18px;
+}
+
+#output-sample>#output>#output1>div>p {
+    font-size: 13px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+#output-sample>#output>#output1>div>.shutter {
+    margin: 0 35%;
+    border-radius: 6px;
+    padding: 0.2vmax 0.7vmax;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-color: rgb(179, 215, 179);
+    background-color: rgb(179, 215, 179);
+    color: rgb(3, 94, 3);
+    box-shadow: 5px 5px 20px 5px rgb(170, 217, 170);
+
+}
+
+
+
+#output-sample>#output>.caution {
+    border: 2px solid black;
+    color: #111111;
+    background-color: yellow;
+    font-weight: 600;
+    padding: 1vmax;
+    width: min-content;
+    margin: 2.5vmax 30% 1.5vmax 30%;
+    box-shadow: 0 0 30px yellow;
+}
+
+#outputSample {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    background-color: #e1e1e1;
+    border: 2px solid rgb(218, 218, 218);
+    border-radius: 8px;
+    height: 100%;
+    padding: 1vmax;
+}
+
+#outputSample>.sample {
+    height: 170px;
+}
+
+#outputSample>h5 {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+@media screen and (max-width:350px){
+    #output-sample>#output>.caution {
+        margin: 20px 40%;
+     }
+    #outputSample>.sample {
+        margin: 0 7%;
+    }
+}
+
+@media screen and (min-width:350px) and (max-width:768px){
+    #output-sample>#output>.caution {
+        margin: 20px 40%;
+     }
+     #outputSample>.sample {
+        margin: 0 15%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1024px) {
+    #output-sample>#output>.caution {
+       margin: 20px 44%;
+    }
+}

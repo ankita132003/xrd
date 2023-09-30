@@ -9,27 +9,193 @@
     <!--  Bootstrap CSS Link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom-dd-jquery-ui.css">
     <title>Simulator</title>
 </head>
 
-<body>
+<body class="body">
 
     <div class=" instructions">
-        <strong>Instructions : Hello XRD </strong>
+        <strong>Instructions : <span id="instructions-text"> </span> </strong>
     </div>
     <div class="container">
 
         <div class="row">
-            <div class="col-sm-12 col-lg-4">
-                <div id="door" class="specimen">
-                    Doors-:<button id="openButton" class="button-91 "
-                        style=" height: 2rem; margin: .2rem; padding: .2rem; width: 4rem;">OPEN</button>
-                    <button id="closeButton" class="button-91 "
-                        style=" height: 2rem; margin: .2rem; padding: .2rem; width: 4rem;">CLOSE</button>
+            <div class="card col-sm-12 col-lg-4" id="first-outer-row">
+                <div id="first-row" class="card">
+                    <div id=" firts-col">
+                        <h4 style="text-decoration: underline; margin-bottom: 13px;">SPECIMEN</h4>
+                        <h5 style="font-weight: 600; font-size: 15px; margin-top: 10px;">SPECIMEN</h5>
+                        <select id="specimen" class="form-select"
+                            style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 13px;"
+                            aria-label="Default select example" disabled="">
+                            <option selected="selected"> specimen </option>
+                            <!-- <option value="0">3D Printed ABS</option>
+                            <option value="1">316 Powder</option> -->
+                            <option value="2">Aluminium</option>
+                            <!-- <option value="3">Arc Sprayed Copper</option>
+                            <option value="4">Boron Nitride</option>
+                            <option value="5">Carbon Fibre</option> -->
+                            <option value="6">Glass</option>
+                            <!-- <option value="7">Glassy Carbon</option>
+                            <option value="8">HOPG</option>
+                            <option value="9">Ni WC Powder</option> -->
+                            <option value="10">Paper</option>
+                            <!-- <option value="11">Polyethylene</option>
+                            <option value="12">Polypropylene</option>
+                            <option value="13">Polystyrene</option>
+                            <option value="14">Salt NaCl</option> -->
+                            <option value="15">Sand</option>
+                            <option value="16">Silicon Powder</option>
+                            <!-- <option value="17">Sugar</option>
+                            <option value="18">TiC Powder</option>
+                            <option value="19">TiO powder</option> -->
+                        </select>
+
+                        <div id="door" class="specimen">
+                            <h5 style="font-weight: 600; font-size: 15px; margin-top: 10px;">DOORS</h5>
+                            <div>
+                                <button id="openButton" class="button-91 "
+                                    style=" height: 2rem; margin: .2rem; padding: .2rem; width: 4rem;"
+                                    disabled="">OPEN</button>
+                                <button id="closeButton" class="button-91 "
+                                    style=" height: 2rem; margin: .2rem; padding: .2rem; width: 4rem;"
+                                    disabled="">CLOSE</button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
+                <div id="first-row" class="card">
+                    <div id="second-col">
+                        <h4 style="text-decoration: underline; margin-bottom: 13px;">X-RAY TUBE</h4>
+                        <div class="second-row">
+                            <div id="standby-div">
+                                <button type="button" id="btn-standby" class="round-btn standby-btn" value="on"
+                                    disabled=""></button>
+                                <label id="standby-label" class="btn-title">STANDBY/ON</label>
+                            </div>
+
+                            <div id="power-div" class="btn-with-title">
+                                <p>FULL POWER</p>
+                                <button type="button" id="btn-power" class="btn btn-active" value="on" disabled=""
+                                    style="cursor: not-allowed;">ON</button>
+                            </div>
+
+                        </div>
+                        <div id="top-stats" class="flex-evenly second-row">
+
+                            <div class="stats-div">
+                                <div id="stats-kv" class="stats flex-evenly">
+                                    <div class="stats-name">
+                                        <p class="stat-title">kV</p>
+                                    </div>
+                                    <div class="stats-value">
+                                        <p id="kv-val" class="stat-title"> 10</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stats-div">
+                                <div id="stats-ma" class="stats flex-evenly">
+                                    <div class="stats-name">
+                                        <p class="stat-title">mA</p>
+                                    </div>
+                                    <div class="stats-value">
+                                        <p id="ma-val" class="stat-title">10</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="first-row" class="card">
+                    <h4 style="text-decoration: underline; margin-bottom: 13px;">SCAN SETTING</h4>
+                    <div id="bottom-stats" class="flex-between">
+                        <div id="start-div" class="stats-div">
+                            <label id="start-label" class="btn-title">START ANGLE (2θ)</label>
+                            <div id="stats-start" class="angle flex-evenly">
+
+                                <div class="stats-value">
+                                    <button type="button" id="btn-start-up" disabled="" class="btn-stats btn-stats-up"
+                                        value="on" style="cursor: pointer;"><strong>-</strong></button>
+                                </div>
+                                <div class="stats-name">
+                                    <p id="start-txt" class="stat-title">5°</p>
+                                </div>
+                                <div class="stats-value">
+                                    <button type="button" id="btn-start-dw" disabled="" class="btn-stats btn-stats-dw"
+                                        value="on"> <strong>+</strong> </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="end-div" class="stats-div" disabled="">
+                            <label id="end-label" class="btn-title">END ANGLE (2θ)</label>
+
+                            <div id="stats-end" class="angle flex-evenly">
+                                <div class="stats-value">
+                                    <button type="button" id="btn-end-up" class="btn-stats btn-stats-up" value="on"
+                                        disabled=""><strong>-</strong></button>
+                                </div>
+
+                                <div class="stats-name">
+                                    <p id="end-txt" class="stat-title">80°</p>
+                                </div>
+                                <div class="stats-value">
+                                    <button type="button" id="btn-end-dw" class="btn-stats btn-stats-dw" value="on"
+                                        disabled=""><strong>+</strong></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="step-options" class="flex-evenly">
+                        <div id="sacn-step">
+                            <div style="font-size: 13px;">STEP SIZE</div>
+                            <select id="step-value" class="form-select" aria-label="Default select example" disabled="">
+                                <option selected="selected" disabled="">...</option>
+                                <option value="1">0.005°</option>
+                                <option value="9">0.01°</option>
+                                <option value="15">0.02°</option>
+                            </select>
+                        </div>
+                        <div id="time-step-div">
+                            <div style="font-size: 13px;">SCAN RATE </div>
+                            <select id="time-step" class="form-select" aria-label="Default select example" disabled="">
+                                <option selected="selected" disabled="">...</option>
+                                <option value="0">0.2 deg/sec</option>
+                                <option value="1">0.08 deg/sec</option>
+                                <option value="2">0.04 deg/sec</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="scantime-div" class="btn-with-title">
+                        <div>
+                            <label id="scantime-label" class="btn-title">SCAN TIME</label>
+                            <div id="scantime-value">
+                                <p id="scantime-val" class="stat-title"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="bottom-row" class="flex-evenly">
+                    <button type="button" id="btn-start-scan" disabled="" class="btn" value="off" style="cursor: pointer;">START
+                        SCAN</button>
+                    <button type="button" id="btn-save-dff" class="btn" value="off" style="cursor: pointer;">SAVE
+                        DIFFRACTOGRAM</button>
+                </div>
+
+
+                <div id="fil-current" class="channel-slider"></div>
+
+
             </div>
-            <div class="col-sm-12 col-lg-4 " id="xrd">
-                <!-- <img src="machine2.png" /> -->
+
+            <div class="card col-sm-12 col-lg-5"  id="xrd">
 
                 <div id="gate">
                     <div class="door left-door" id="leftDoor"></div>
@@ -38,20 +204,57 @@
                 <div>
                     <div style="position: relative;" class="machine">
                         <img src="machine2.png" alt="xrd image">
-                        <div class="source">
+
+                        <div class="source" id="source" style="position: absolute;">
                             <img src="source.png" height="80px">
                         </div>
-                        <div style="position: absolute;" class="detector">
+                        <div style="position: absolute;" class="detector" id="detector">
                             <img src="detector.png">
                         </div>
+                        <div style="position: absolute;" class="source-ray" id="source-ray">
+
+                        </div>
+                        <div style="position: absolute;" id="detector-ray" class="detector-ray">
+                        
+                        </div>
+                        <div class="circle" style="position: absolute;" id="circle"></div>
                     </div>
+
                 </div>
 
             </div>
-            <div class="col-sm-12 col-lg-4">
+            <div class="col-sm-12 col-lg-3" id="output-sample">
+                <div id="output">
+                    <div id="output1">
+                        <div>
+                            <h5> <strong>INSTRUMENT STATUS</strong></h5>
+                            <p> <b>SHUTTER</b> </p>
+                            <button id="shutter" class="shutter">CLOSED</button>
+
+                        </div>
+                    </div>
+                    <diV class="caution">CAUTION</diV>
+                </div>
+                <div id="outputSample">
+                    <h5 style="text-align: center;"><strong>SAMPLE</strong></h5>
+                    <img class="sample" src="sample.png" />
+                </div>
 
             </div>
         </div>
+
+    </div>
+    <!-- <div class="row">
+
+
+        <div class="col-lg-5">
+
+        </div>
+        <div class="col-lg-7">
+            hii
+        </div>
+    </div> -->
+
     </div>
 
     <script src="script.js"></script>
