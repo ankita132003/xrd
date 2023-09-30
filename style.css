@@ -320,8 +320,8 @@
 #xrd {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     border: 2px solid rgb(201, 201, 201);
-    height: 100%;
-    width: 40%;
+    height: 69%;
+    width: 90%;
     margin-left: 1vmax;
     background-color: #dfdfdf;
     display: flex;
@@ -332,6 +332,12 @@
     height: 3%;
     width: 400px;
     max-width: 100%;
+}
+
+ #graph > img{
+    padding: 3vmax 1vmax;
+    height: 300px;
+    width: 500px;
 }
 
 
@@ -608,7 +614,7 @@
     overflow: hidden;
     position: absolute;
     z-index: 999;
-    bottom: 15.4rem;
+    bottom: 16.7rem;
 }
 
 .door {
@@ -772,9 +778,9 @@
 @media screen and (min-width: 376px) and (max-width: 390px) {
 
     #xrd {
-        height: 100%;
-        width: 96%;
-        margin: 1vmax;
+        height: 60%;
+        width: 100%;
+        margin: 2vmax 0;
     }
 
     #xrd>div>.machine>.source {
@@ -814,10 +820,10 @@
 
     #gate {
         display: flex;
-        width: 12.5rem;
-        height: 11rem;
-        left: 23.7%;
-        top: 16.5%;
+        width: 12.9rem;
+        height: 11.4rem;
+        left: 22%;
+        top: 16.8%;
         overflow: hidden;
         position: absolute;
         z-index: 999;

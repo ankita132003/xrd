@@ -15,29 +15,33 @@ const btnEndDw = document.getElementById("btn-end-dw");
 
 const sample = document.getElementById("circle");
 
+const detectorRay = document.querySelector(".detector-ray");
+const sourceRay = document.getElementById("source-ray");
+
 const startAnimationButton = document.getElementById('btn-start-scan');
 const shutterButton = document.getElementById("shutter");
 
 specimenSelect.disabled = false;
 sample.style.display = "none";
-
+sourceRay.style.display = "none";
+detectorRay.style.display = "none";
 
 const textElement = document.getElementById("instructions-text");
 var text = "Welcome to the simulation of XRD. Please select the specimen.";
 
 function typeWriter(text, element) {
-  let index = 0;
-  const speed = 50; // Adjust the typing speed (milliseconds per character)
+    let index = 0;
+    const speed = 50; // Adjust the typing speed (milliseconds per character)
 
-  function type() {
-    if (index < text.length) {
-      element.textContent += text.charAt(index);
-      index++;
-      setTimeout(type, speed);
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, speed);
+        }
     }
-  }
 
-  type();
+    type();
 }
 
 // Call the typewriter function
@@ -46,16 +50,16 @@ typeWriter(text, textElement);
 
 
 specimenSelect.addEventListener("change", function () {
-    
-   
+
+
 
     if (specimenSelect.value !== "") {
         specimenSelect.disabled = true;
-        
+
         textElement.textContent = "";
         text = "Now Click on 'OPEN' Button. ";
         typeWriter(text, textElement);
-       
+
     } else {
         specimenSelect.disabled = false;
     }
@@ -74,7 +78,7 @@ openButton.addEventListener("click", function () {
         sample.style.display = "block";
         sample.style.animation = "moveSample 2s backwards";
         closeButton.disabled = false;
-        
+
         textElement.textContent = "";
         text = "Now Click on 'CLOSE' Button. ";
         typeWriter(text, textElement);
@@ -142,11 +146,11 @@ standbyButton.addEventListener("click", function () {
     btnStartDw.disabled = false;
     btnStartUp.disabled = false;
 
- setTimeout(function(){
-    textElement.textContent = "";
-    text = "Set the Start Angle and End Angle.";
-    typeWriter(text, textElement);
- }, 4000);
+    setTimeout(function () {
+        textElement.textContent = "";
+        text = "Set the Start Angle and End Angle.";
+        typeWriter(text, textElement);
+    }, 4000);
 
 });
 
@@ -225,9 +229,11 @@ btnEndDw.addEventListener("click", function () {
     endangle += 5;
 
 
-    if (endangle > 110) {
-        endangle = 110;
+    if (endangle > 160) {
+        endangle = 160;
     }
+
+    
 
     updateEndAngle();
 
@@ -245,6 +251,8 @@ stepValue.addEventListener("change", function () {
     btnEndUp.disabled = true;
     stepValue.disabled = true;
     timestep.disabled = false;
+    sourceRay.style.display = "block";
+    detectorRay.style.display = "block";
 
     textElement.textContent = "";
     text = "Select the Scan Rate. ";
@@ -252,8 +260,8 @@ stepValue.addEventListener("change", function () {
 
 });
 
-timestep.addEventListener("change", function(){
-    timestep.disabled=true;
+timestep.addEventListener("change", function () {
+    timestep.disabled = true;
     startAnimationButton.disabled = false;
     textElement.textContent = "";
     text = "Click on 'START SCAN' Button. ";
@@ -300,20 +308,18 @@ startAnimationButton.addEventListener('click', function () {
     const detector = document.getElementById("detector");
     const source = document.getElementById("source");
 
-    const detectorRay = document.querySelector(".detector-ray");
-    const sourceRay = document.getElementById("source-ray");
 
 
     detectorRay.style.animationName = "rotateFromZeroToNeg45"
     sourceRay.style.animationName = "rotateFromZeroToPos45";
-    
+
     source.style.animationName = "moveUpDown";
     detector.style.animationName = "oppMoveUpDown";
     setTimeout(function () {
 
         sourceRay.style.animationName = "rotateFromPos45ToZero";
         detectorRay.style.animationName = "rotateFromNeg45ToZero";
-        
+
         source.style.animationName = "moveUpDownZeroToDown";
         detector.style.animationName = "oppMoveUpDownZeroToDown";
     }, 5000);
