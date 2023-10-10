@@ -16,19 +16,17 @@
 <body class="body">
 
 
-    <div id="dialogue-box-parent" style="  width: 98.6vw;
-    height: 100%; z-index: 1000;
-    position: absolute; background-color: rgba(0, 0, 0, 0.8);display: block; ">
+    <div id="dialogue-box-parent">
         <div class="dialogue-box">
             <h1>WELCOME TO THE XRD SIMULATION</h1>
-            <h4 style="color: #16b639; font-style: italic">
-                Choose the language for instructions:
+            <h4 style="color: #11a230; ">
+                Choose the language for instructions
             </h4>
             <div style="display: flex;">
-                <button onclick="englishVoice(this)" style="background-color: green;">
+                <button id="english"  style="background-color: green;">
                     ENG
                 </button>
-                <button onclick="hindiVoice(this)" style="background-color: red;">
+                <button id="hindi" style="background-color: red;">
                     HIN
                 </button>
             </div>
@@ -176,21 +174,11 @@
                     <div id="step-options" class="flex-evenly">
                         <div id="sacn-step">
                             <div style="font-size: 13px;">STEP SIZE</div>
-                            <select id="step-value" class="form-select" aria-label="Default select example" disabled="">
-                                <option selected="selected" disabled="">...</option>
-                                <option value="1">0.005°</option>
-                                <option value="9">0.01°</option>
-                                <option value="15">0.02°</option>
-                            </select>
+                            <input id="step-value" style="width: 100px; border-radius: 5px; text-align: center;" disabled="" />
                         </div>
                         <div id="time-step-div">
                             <div style="font-size: 13px;">SCAN RATE </div>
-                            <select id="time-step" class="form-select" aria-label="Default select example" disabled="">
-                                <option selected="selected" disabled="">...</option>
-                                <option value="0">0.2 deg/sec</option>
-                                <option value="1">0.08 deg/sec</option>
-                                <option value="2">0.04 deg/sec</option>
-                            </select>
+                            <input id="time-step" style="width: 100px; border-radius: 5px; text-align: center;"  disabled=""/>
                         </div>
                     </div>
 
@@ -246,7 +234,9 @@
                     </div>
                 </div>
                 <div class="graph" id="graph">
-                    <img src="sampleImage.png" />
+                    <div id="graph-output">
+                        <img src="sampleImage.png" />
+                    </div>
                 </div>
 
             </div>
@@ -272,7 +262,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-4">
 
@@ -283,7 +273,7 @@
 
         </div>
 
-    </div>
+    </div> -->
 
 
     </div>

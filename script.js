@@ -20,14 +20,90 @@ const sourceRay = document.getElementById("source-ray");
 
 const startAnimationButton = document.getElementById('btn-start-scan');
 const shutterButton = document.getElementById("shutter");
+const graph = document.getElementById('graph-output');
+
 
 specimenSelect.disabled = false;
 sample.style.display = "none";
 sourceRay.style.display = "none";
 detectorRay.style.display = "none";
+graph.style.display = "none";
+
+
+
+//  text and voice 
+
+const voiceText = document.getElementById("dialogue-box-parent");
+const englishButton = document.getElementById("english");
+const hindiButton = document.getElementById("hindi");
+
+
+let english = true;
+let hindi = false;
+
+function voice() {
+    textToSpeech("Welcome to the XRD Simulation", "en-US");
+    textToSpeech("Choose the Language you want for the instructions.", "en-US");
+    textToSpeech("एक्सआरडी सिमुलेशन में आपका स्वागत है", "hi-IN");
+    textToSpeech("निर्देशों के लिए अपनी इच्छित भाषा चुनें.", "hi-IN");
+}
+voice();
+
+englishButton.addEventListener("click", function () {
+    
+    voiceText.style.display = "none";
+    textToSpeech("Switched to English language.", "en-US");
+    setTimeout(() => {
+        var text = "Please select the specimen.";
+
+        typeWriter(text, textElement);
+        textToSpeech("Please select the specimen.", "en-US");
+    }, 2500);
+
+});
+
+hindiButton.addEventListener("click", function () {
+    voiceText.style.display = "none";
+    english = false;
+    hindi = true;
+    textToSpeech("भाषा को हिंदी में स्विच किया गया है।", "hi-IN");
+    setTimeout(() => {
+        var text = "कृपया नमूना चुनें.";
+
+        typeWriter(text, textElement);
+        textToSpeech("कृपया नमूना चुनें.", "hi-IN");
+    }, 3500);
+});
+
+
+
+function textToSpeech(text, lang) {
+    const utterance = new SpeechSynthesisUtterance();
+    utterance.text = text;
+
+    if (lang) {
+        utterance.lang = lang;
+    }
+
+    // Check if speech synthesis is paused and resume it if necessary
+    if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+    }
+
+    // Start the speech synthesis
+    window.speechSynthesis.speak(utterance);
+}
+
+
+
+
+
+
+
 
 const textElement = document.getElementById("instructions-text");
-var text = "Welcome to the simulation of XRD. Please select the specimen.";
+
+
 
 function typeWriter(text, element) {
     let index = 0;
@@ -44,8 +120,7 @@ function typeWriter(text, element) {
     type();
 }
 
-// Call the typewriter function
-typeWriter(text, textElement);
+
 
 
 
@@ -56,9 +131,20 @@ specimenSelect.addEventListener("change", function () {
     if (specimenSelect.value !== "") {
         specimenSelect.disabled = true;
 
-        textElement.textContent = "";
-        text = "Now Click on 'OPEN' Button. ";
-        typeWriter(text, textElement);
+
+        if (english) {
+            textElement.textContent = "";
+            text = "Now Click on 'OPEN' Button.";
+            typeWriter(text, textElement);
+            textToSpeech("Now Click on 'OPEN' Button.", "en-US");
+        }
+        else if (hindi) {
+            textElement.textContent = "";
+            text = "अब ओपन बटन पर क्लिक करें।";
+            typeWriter(text, textElement);
+            textToSpeech("अब ओपन बटन पर क्लिक करें।,", "hi-In");
+        }
+
 
     } else {
         specimenSelect.disabled = false;
@@ -79,9 +165,23 @@ openButton.addEventListener("click", function () {
         sample.style.animation = "moveSample 2s backwards";
         closeButton.disabled = false;
 
-        textElement.textContent = "";
-        text = "Now Click on 'CLOSE' Button. ";
-        typeWriter(text, textElement);
+
+
+        if (english) {
+            textElement.textContent = "";
+            text = "Now Click on 'CLOSE' Button. ";
+            typeWriter(text, textElement);
+            textToSpeech("Now Click on 'CLOSE' Button. ", "en-US");
+        }
+        else if (hindi) {
+            textElement.textContent = "";
+            text = "अब बंद करें बटन पर क्लिक करें।";
+            typeWriter(text, textElement);
+            textToSpeech("अब बंद करें बटन पर क्लिक करें।", "hi-In");
+        }
+
+
+
 
     }, 2000);
 
@@ -94,9 +194,19 @@ closeButton.addEventListener("click", function () {
     rightDoor.classList.remove("opened");
     standbyButton.disabled = false;
 
-    textElement.textContent = "";
-    text = "Now Click on 'STANDBY/ON' Button. ";
-    typeWriter(text, textElement);
+    if (english) {
+
+        textElement.textContent = "";
+        text = "Now Click on 'STANDBY/ON' Button. ";
+        typeWriter(text, textElement);
+        textToSpeech("Now Click on 'STANDBY/ON' Button.", "en-US");
+    }
+    else if (hindi) {
+        textElement.textContent = "";
+        text = "अब स्टैंडबाय/ऑन बटन पर क्लिक करें।";
+        typeWriter(text, textElement);
+        textToSpeech("अब स्टैंडबाय/ऑन बटन पर क्लिक करें।", "hi-In");
+    }
 
 });
 
@@ -147,9 +257,20 @@ standbyButton.addEventListener("click", function () {
     btnStartUp.disabled = false;
 
     setTimeout(function () {
-        textElement.textContent = "";
-        text = "Set the Start Angle and End Angle.";
-        typeWriter(text, textElement);
+        if (english) {
+            textElement.textContent = "";
+            text = " Now Set the Start Angle and End Angle.";
+            typeWriter(text, textElement);
+            textToSpeech("Now Set the Start Angle and End Angle.", "en-US");
+        }
+        else if (hindi) {
+            textElement.textContent = "";
+            text = "अब प्रारंभ कोण और समाप्ति कोण सेट करें.";
+            typeWriter(text,  textElement);
+            textToSpeech("अब प्रारंभ कोण और समाप्ति कोण सेट करें.", "hi-In");
+        }
+
+
     }, 4000);
 
 });
@@ -218,9 +339,7 @@ btnEndUp.addEventListener("click", function () {
 
     updateEndAngle();
 
-    textElement.textContent = "";
-    text = "Select the Step size. ";
-    typeWriter(text, textElement);
+
 });
 
 
@@ -232,14 +351,19 @@ btnEndDw.addEventListener("click", function () {
     if (endangle > 160) {
         endangle = 160;
     }
-
-    
-
     updateEndAngle();
-
-    textElement.textContent = "";
-    text = "Select the Step size. ";
-    typeWriter(text, textElement);
+    if (english) {
+        textElement.textContent = "";
+        text = "Now input the Step size.";
+        typeWriter(text, textElement);
+        textToSpeech("Now input the Step size.", "en-US");
+    }
+    else if (hindi) {
+        textElement.textContent = "";
+        text = "अब स्टेप साइज इनपुट करें।";
+        typeWriter(text,  textElement);
+        textToSpeech("अब स्टेप साइज इनपुट करें।", "hi-In");
+    }
 });
 
 
@@ -254,18 +378,40 @@ stepValue.addEventListener("change", function () {
     sourceRay.style.display = "block";
     detectorRay.style.display = "block";
 
-    textElement.textContent = "";
-    text = "Select the Scan Rate. ";
-    typeWriter(text, textElement);
+   
+
+    if (english) {
+        textElement.textContent = "";
+        text = "Now input the  Scan Rate.";
+        typeWriter(text, textElement);
+        textToSpeech("Now input the  Scan Rate", "en-US");
+    }
+    else if (hindi) {
+        textElement.textContent = "";
+        text = "अब स्कैन रेट इनपुट करें।";
+        typeWriter(text,  textElement);
+        textToSpeech("अब स्कैन रेट इनपुट करें।", "hi-In");
+    }
 
 });
 
 timestep.addEventListener("change", function () {
     timestep.disabled = true;
     startAnimationButton.disabled = false;
-    textElement.textContent = "";
-    text = "Click on 'START SCAN' Button. ";
-    typeWriter(text, textElement);
+ 
+
+    if (english) {
+        textElement.textContent = "";
+        text = "Now Click on 'START SCAN' Button. ";
+        typeWriter(text, textElement);
+        textToSpeech("Now Click on 'START SCAN' Button.", "en-US");
+    }
+    else if (hindi) {
+        textElement.textContent = "";
+        text = "अब स्टार्ट स्कैन बटन पर क्लिक करें।";
+        typeWriter(text,  textElement);
+        textToSpeech("अब स्टार्ट स्कैन बटन पर क्लिक करें।", "hi-In");
+    }
 })
 
 
@@ -315,6 +461,7 @@ startAnimationButton.addEventListener('click', function () {
 
     source.style.animationName = "moveUpDown";
     detector.style.animationName = "oppMoveUpDown";
+    graph.style.display = "block";
     setTimeout(function () {
 
         sourceRay.style.animationName = "rotateFromPos45ToZero";
