@@ -22,8 +22,11 @@ const startAnimationButton = document.getElementById('btn-start-scan');
 const shutterButton = document.getElementById("shutter");
 const graph = document.getElementById('graph-output');
 
+const onButton = document.getElementById("machineOnButton");
+const offButton = document.getElementById("machineOffButton");
 
-specimenSelect.disabled = false;
+
+
 sample.style.display = "none";
 sourceRay.style.display = "none";
 detectorRay.style.display = "none";
@@ -37,10 +40,6 @@ const voiceText = document.getElementById("dialogue-box-parent");
 const englishButton = document.getElementById("english");
 const hindiButton = document.getElementById("hindi");
 
-
-let english = true;
-let hindi = false;
-
 function voice() {
     textToSpeech("Welcome to the XRD Simulation", "en-US");
     textToSpeech("Choose the Language you want for the instructions.", "en-US");
@@ -49,15 +48,20 @@ function voice() {
 }
 voice();
 
+let english = true;
+let hindi = false;
+
+
+
 englishButton.addEventListener("click", function () {
     
     voiceText.style.display = "none";
     textToSpeech("Switched to English language.", "en-US");
     setTimeout(() => {
-        var text = "Please select the specimen.";
+        var text = "To Open the Machine Please Click On 'ON' Button";
 
         typeWriter(text, textElement);
-        textToSpeech("Please select the specimen.", "en-US");
+        textToSpeech("To Open the Machine Please Click On 'ON' Button", "en-US");
     }, 2500);
 
 });
@@ -68,10 +72,10 @@ hindiButton.addEventListener("click", function () {
     hindi = true;
     textToSpeech("भाषा को हिंदी में स्विच किया गया है।", "hi-IN");
     setTimeout(() => {
-        var text = "कृपया नमूना चुनें.";
+        var text = "मशीन खोलने के लिए कृपया ऑन बटन पर क्लिक करें";
 
         typeWriter(text, textElement);
-        textToSpeech("कृपया नमूना चुनें.", "hi-IN");
+        textToSpeech("मशीन खोलने के लिए कृपया ऑन बटन पर क्लिक करें", "hi-IN");
     }, 3500);
 });
 
@@ -121,8 +125,46 @@ function typeWriter(text, element) {
 }
 
 
+onButton.addEventListener("click", function(){
+    onButton.style.background="black";
+    onButton.style.color="white";
+    offButton.style.background="";
+    offButton.style.color="";
+    specimenSelect.disabled = false;
+    if (english) {
+        textElement.textContent = "";
+        text = " Machine has turned on.  If you want to stop the machine then click on the off button otherwise select the specimen.";
+        typeWriter(text, textElement);
+        textToSpeech(" Machine has turned on.  If you want to stop the machine then click on the off button otherwise select the specimen.", "en-US");
+    }
+    else if (hindi) {
+        textElement.textContent = "";
+        text = "मशीन ऑन हो चुकी है। अगर आप मशीन को बंद करना चाहते हैं तो आप ऑफ बटन पर क्लिक करें अन्यथा  स्पेसिमेन को सेलेक्ट करें।";
+        typeWriter(text, textElement);
+        textToSpeech("मशीन ऑन हो चुकी है। अगर आप मशीन को बंद करना चाहते हैं तो आप ऑफ बटन पर क्लिक करें अन्यथा  स्पेसिमेन को सेलेक्ट करें", "hi-In");
+    }
+})
 
+offButton.addEventListener("click", function(){
+    onButton.style.background="";
+    onButton.style.color="";
+    offButton.style.background="black";
+    offButton.style.color="white";
+    specimenSelect.disabled = true;
 
+    if (english) {
+        textElement.textContent = "";
+        text = "Machine has turned off. If you want to On it again, Please Click on the 'ON'button.";
+        typeWriter(text, textElement);
+        textToSpeech("Machine has turned off. If you want to On it again, Please Click on the 'ON'button.", "en-US");
+    }
+    else if (hindi) {
+        textElement.textContent = "";
+        text = "मशीन बंद हो चुकी है। अगर आप उसे दोबारा चलाना चाहते हैं तो ऑन बटन पर क्लिक करें";
+        typeWriter(text, textElement);
+        textToSpeech("मशीन बंद हो चुकी है। अगर आप उसे दोबारा चलाना चाहते हैं तो ऑन बटन पर क्लिक करें", "hi-In");
+    }
+})
 
 specimenSelect.addEventListener("change", function () {
 
@@ -461,7 +503,7 @@ startAnimationButton.addEventListener('click', function () {
 
     source.style.animationName = "moveUpDown";
     detector.style.animationName = "oppMoveUpDown";
-    graph.style.display = "block";
+    
     setTimeout(function () {
 
         sourceRay.style.animationName = "rotateFromPos45ToZero";
@@ -469,6 +511,7 @@ startAnimationButton.addEventListener('click', function () {
 
         source.style.animationName = "moveUpDownZeroToDown";
         detector.style.animationName = "oppMoveUpDownZeroToDown";
+        graph.style.display = "block";
     }, 5000);
 
     setTimeout(function () {

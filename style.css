@@ -74,6 +74,24 @@
 
 /* ====  Control Pannel CSS ==== */
 
+.machineOnOffButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vmax ;
+}
+
+.machineOnOffButton>button{
+    padding: 0.3vmax 0.8vmax;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0 0.5vmax;
+    border-radius: 5px;
+    border-color: #afadad;
+}
+.machineOnOffButton>button:hover{
+    background-color:#e3e3e3;
+}
+
 #first-outer-row {
     background-color: #afadad;
     border: 2px solid rgb(168, 164, 164);
@@ -841,33 +859,33 @@
 
     #xrd {
         height: 60%;
-        width: 96%;
+        width: 100%;
         margin: 2vmax 0;
     }
 
     #xrd>div>.machine>.source {
         position: absolute;
-        top: 9.5rem;
-        left: 3rem;
+        top: 9.8rem;
+        left: 3.4rem;
     }
 
 
     #xrd>div>.machine>.detector {
         position: absolute;
-        top: 9.3rem;
-        left: 12.6rem;
+        top: 9.9rem;
+        left: 13.1rem;
     }
 
     #xrd>div>.machine>.source-ray {
         position: absolute;
-        top: 12.9rem;
-        left: 7.6rem;
+        top: 13.3rem;
+        left: 8rem;
     }
 
     #xrd>div>.machine>.detector-ray {
         position: absolute;
-        top: 12.9rem;
-        left: 10.6rem;
+        top: 13.3rem;
+        left: 11rem;
     }
 
     .detector-ray {
@@ -880,20 +898,33 @@
         transform: rotate(25deg);
     }
 
+    #graph{
+        width: 100%;
+        height: 240px;
+        margin: 0;
+    }
+    
+     #graph > div> img{
+        height: 240px;
+        width: 100%;
+        margin: 0;
+    }
+    
+
     #gate {
         display: flex;
         width: 12.9rem;
         height: 11.4rem;
         left: 22%;
-        top: 16.8%;
+        top: 14%;
         overflow: hidden;
         position: absolute;
         z-index: 999;
     }
 
     #xrd>div>.machine>.circle {
-        left: 9.9rem;
-        bottom: 15.8rem;
+        left: 10.3rem;
+        bottom: 16.5rem;
     }
 
 }
