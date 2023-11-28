@@ -410,14 +410,16 @@
     border: 2px solid rgb(189, 189, 189);
     box-shadow: 5px 5px 5px rgb(163, 162, 162);
     width: 500px;
-    height: 240px;
-    margin: 2rem 1rem;
+    height: 230px;
+    margin: 1rem 1rem;
     border-radius: 5px;
 }
 
  #graph > div> img{
-    height: 240px;
-    width: 500px;
+    height: 220px;
+    width: 490px;
+    margin: 0.2rem 0.2rem;
+    border-radius: 5px;
 }
 
 
@@ -565,7 +567,7 @@
 #xrd>div>.machine>.source-ray {
     position: absolute;
     bottom: 18.3rem;
-    left: 8.4rem;
+    left: 8.6rem;
 }
 
 
@@ -603,7 +605,7 @@
 #xrd>div>.machine>.source {
     position: absolute;
     bottom: 17.2rem;
-    left: 3.8rem;
+    left: 4.1rem;
 
     animation-duration: 5s;
     animation-timing-function: linear;
@@ -616,28 +618,29 @@
     }
 
     50% {
-        left: 4rem;
+        left: 4.2rem;
         transform: translateY(-15px) rotate(25deg);
     }
 
     100% {
-        left: 4.5rem;
+        left: 4.8rem;
         transform: translateY(-30px) rotate(25deg);
     }
 }
 
 @keyframes moveUpDownZeroToDown {
     0% {
-        left: 4.5rem;
+        left: 4.8rem;
         transform: translateY(-30px) rotate(25deg);
     }
 
     25% {
-        left: 4rem;
+        left: 4.3rem;
         transform: translateY(-15px) rotate(10deg);
     }
 
     50% {
+        left: 4rem;
         transform: translateY(0px) rotate(0deg);
     }
 
@@ -694,7 +697,7 @@
     overflow: hidden;
     position: absolute;
     z-index: 999;
-    bottom: 16.7rem;
+    bottom: 16.2rem;
 }
 
 .door {
