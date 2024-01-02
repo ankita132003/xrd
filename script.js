@@ -25,12 +25,13 @@ const graph = document.getElementById('graph-output');
 const onButton = document.getElementById("machineOnButton");
 const offButton = document.getElementById("machineOffButton");
 
-
+const table = document.getElementById("table");
 
 sample.style.display = "none";
 sourceRay.style.display = "none";
 detectorRay.style.display = "none";
 graph.style.display = "none";
+table.style.display = "none";
 
 
 
@@ -512,6 +513,7 @@ startAnimationButton.addEventListener('click', function () {
         source.style.animationName = "moveUpDownZeroToDown";
         detector.style.animationName = "oppMoveUpDownZeroToDown";
         graph.style.display = "block";
+        table.style.display = "block";
     }, 5000);
 
     setTimeout(function () {

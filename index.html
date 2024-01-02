@@ -49,7 +49,7 @@
                     <div id=" firts-col">
                         <h4 style="text-decoration: underline; margin-bottom: 13px;">SPECIMEN</h4>
                         <h5 style="font-weight: 600; font-size: 15px; margin-top: 10px;">SPECIMEN</h5>
-                        <select id="specimen" class="form-select" 
+                        <select id="specimen" class="form-select"
                             style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 13px;"
                             aria-label="Default select example" disabled="">
                             <option selected="selected"> specimen </option>
@@ -108,28 +108,25 @@
 
                         </div>
                         <div id="top-stats" class="flex-evenly second-row">
-
-                            <div class="stats-div">
-                                <div id="stats-kv" class="stats flex-evenly">
-                                    <div class="stats-name">
-                                        <p class="stat-title">kV</p>
-                                    </div>
-                                    <div class="stats-value">
-                                        <p id="kv-val" class="stat-title"> 10</p>
-                                    </div>
-                                </div>
+                            <div>
+                                <div class="form-group">
+                                    <!-- <label for="customRange">Select a value:</label> -->
+                                    <input type="range" class="custom-range" id="customRange" min="0" max="60" step="10">
+                                  </div>
+                                  <div class="text-center">
+                                    <span>0</span>
+                                    <span class="ml-auto">10</span>
+                                    <span class="ml-auto">20</span>
+                                    <span class="ml-auto">30</span>
+                                    <span class="ml-auto">40</span>
+                                    <span class="ml-auto">50</span>
+                                  </div>
                             </div>
-                            <div class="stats-div">
-                                <div id="stats-ma" class="stats flex-evenly">
-                                    <div class="stats-name">
-                                        <p class="stat-title">mA</p>
-                                    </div>
-                                    <div class="stats-value">
-                                        <p id="ma-val" class="stat-title">10</p>
-                                    </div>
-                                </div>
+                            <div>
+                                hii
                             </div>
                         </div>
+                                      
                     </div>
                 </div>
 
@@ -201,8 +198,10 @@
                     <button type="button" id="btn-start-scan" disabled="" class="btn" value="off"
                         style="cursor: pointer;">START
                         SCAN</button>
-                    <button type="button" id="btn-save-dff" class="btn" value="off" style="cursor: pointer;">SAVE
-                        DIFFRACTOGRAM</button>
+                    <!-- <button type="button" id="btn-save-dff" class="btn" value="off" style="cursor: pointer;">SAVE
+                        DIFFRACTOGRAM</button> -->
+                        <a href="sampleImage.png" type="button" id="btn-save-dff" class="btn" style="background-color: rgb(199, 196, 191); border: 1px solid rgb(131, 129, 129); padding: 3.7px 5px; color: rgb(100, 99, 99); font-size: 13px;" disabled value="off" style="cursor: pointer;"<i class="fa fa-download" download></i> SAVE
+                            DIFFRACTOGRAM</a>
                 </div>
 
 
@@ -268,43 +267,81 @@
         </div>
     </div>
 
-    <!-- <div class="container">
+    <div class="container" id="table">
         <div class="row">
             <div class="col-12">
                 <table class="table table-light table-striped">
                     <thead>
                         <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">First</th>
-                          <th scope="col">Last</th>
-                          <th scope="col">Handle</th>
+                            <th scope="col">No.</th>
+                            <th scope="col">h</th>
+                            <th scope="col">k</th>
+                            <th scope="col">l</th>
+                            <th scope="col">d(Å)</th>
+                            <th scope="col">2Theta(deg)</th>
+                            <th scope="col">sin(2θ)</th>
+                            <th scope="col">a(lambda)</th>
                         </tr>
-                      </thead>
-                      <tbody>
+                    </thead>
+                    <tbody>
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
+                            <th scope="row">1</th>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>3.51666</td>
+                            <td>25.306</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
                         <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
+                            <th scope="row">2</th>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td>2.43056</td>
+                            <td>36.954</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
                         <tr>
-                          <th scope="row">3</th>
-                          <td colspan="2">Larry the Bird</td>
-                          <td>@twitter</td>
+                            <th scope="row">3</th>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>4</td>
+                            <td>2.37810</td>
+                            <td>37.800</td>
+                            <td>0</td>
+                            <td>0</td>
                         </tr>
-                      </tbody>
-                  </table>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>2.33237</td>
+                            <td>38.570</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1.89240</td>
+                            <td>48.039</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
             </div>
 
         </div>
 
-    </div> -->
+    </div>
 
 
     </div>
@@ -318,6 +355,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
         crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 
