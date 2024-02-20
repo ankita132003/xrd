@@ -322,6 +322,8 @@
     background-color: #c5c2c2;
 }
 
+
+
 @media screen and (max-width: 350px) {
     #first-outer-row {
         width: 96%;
@@ -396,7 +398,7 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     border: 2px solid rgb(201, 201, 201);
     height: 69%;
-    width: 90%;
+    width: 100%;
     margin-left: 1vmax;
     background-color: #dfdfdf;
     display: flex;
@@ -404,9 +406,9 @@
 }
 
 #xrd>div>.machine>img {
-    height: 3%;
-    width: 400px;
-    max-width: 100%;
+    height: 1%;
+    width: 450px;
+    /* max-width: 100%; */
 }
 
 #graph{
@@ -441,8 +443,8 @@
 
 #xrd>div>.machine>.detector-ray {
     position: absolute;
-    bottom: 18.3rem;
-    left: 12.3rem;
+    bottom: 20.7rem;
+    left: 14.2rem;
 }
 
 @keyframes rotateFromZeroToNeg45 {
@@ -480,8 +482,8 @@
 
 #xrd>div>.machine>.detector {
     position: absolute;
-    bottom: 18.5rem;
-    left: 15rem;
+    bottom: 20.7rem;
+    left: 16.8rem;
     animation-duration: 5s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
@@ -544,22 +546,21 @@
 
 
 #xrd>div>.machine>.detector>img {
-    height: 60px;
+    height: 68px;
 }
 
 
 #xrd>div>.machine>.source>img {
-    height: 80px;
+    height: 86px;
 }
 
 
 .source-ray {
-    width: 63px;
+    width: 65px;
     height: 1px;
     background-color: rgb(179, 10, 10);
     transform: rotate(25deg);
     transform-origin: 100% 0%;
-
     animation-duration: 5s;
     animation-timing-function: linear;
     animation-fill-mode: backwards;
@@ -569,8 +570,8 @@
 
 #xrd>div>.machine>.source-ray {
     position: absolute;
-    bottom: 18.3rem;
-    left: 8.6rem;
+    bottom: 20.6rem;
+    left: 9.9rem;
 }
 
 
@@ -607,8 +608,8 @@
 
 #xrd>div>.machine>.source {
     position: absolute;
-    bottom: 17.2rem;
-    left: 4.1rem;
+    bottom: 19.4rem;
+    left: 4.9rem;
 
     animation-duration: 5s;
     animation-timing-function: linear;
@@ -670,8 +671,8 @@
     background-color: rgb(165, 164, 164);
     border-radius: 50%;
     box-shadow: 5px 5px 10px #928f8f;
-    left: 11.5rem;
-    bottom: 18.2rem;
+    left: 13.2rem;
+    bottom: 20.5rem;
 }
 
 
@@ -694,13 +695,13 @@
 
 #gate {
     display: flex;
-    width: 14rem;
-    height: 12.5rem;
+    width: 16rem;
+    height: 14rem;
     left: 22.5%;
     overflow: hidden;
     position: absolute;
     z-index: 999;
-    bottom: 16.2rem;
+    bottom: 17.2rem;
 }
 
 .door {

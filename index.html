@@ -108,23 +108,17 @@
 
                         </div>
                         <div id="top-stats" class="flex-evenly second-row">
-                            <div>
-                                <div class="form-group">
-                                    <!-- <label for="customRange">Select a value:</label> -->
-                                    <input type="range" class="custom-range" id="customRange" min="0" max="60" step="10">
-                                  </div>
-                                  <div class="text-center">
-                                    <span>0</span>
-                                    <span class="ml-auto">10</span>
-                                    <span class="ml-auto">20</span>
-                                    <span class="ml-auto">30</span>
-                                    <span class="ml-auto">40</span>
-                                    <span class="ml-auto">50</span>
-                                  </div>
-                            </div>
-                            <div>
-                                hii
-                            </div>
+                            <!-- <div class="slider-container"> -->
+                                <div class="slider-value-container" >
+                                    <label for="voltage-slider" class="slider-label"  style=" font-size: 15px;">Voltage: <span style=" font-size: 15px;" id="voltage-value" class="slider-value">0 kV</span></label>
+                                    <input type="range" id="voltage-slider" min="0" max="100" step="5" value="0" class="slider" disabled="">
+                                </div>
+                        
+                                <div class="slider-value-container">
+                                    <label for="current-slider" class="slider-label"  style=" font-size: 15px;">Current: <span style=" font-size: 15px;" id="current-value" class="slider-value">0 mA</span></label>
+                                    <input type="range" id="current-slider" min="0" max="100" step="5"  value="0" class="slider" disabled="">
+                                </div>
+                            <!-- </div> -->
                         </div>
                                       
                     </div>
@@ -198,9 +192,7 @@
                     <button type="button" id="btn-start-scan" disabled="" class="btn" value="off"
                         style="cursor: pointer;">START
                         SCAN</button>
-                    <!-- <button type="button" id="btn-save-dff" class="btn" value="off" style="cursor: pointer;">SAVE
-                        DIFFRACTOGRAM</button> -->
-                        <a href="sampleImage.png" type="button" id="btn-save-dff" class="btn" style="background-color: rgb(199, 196, 191); border: 1px solid rgb(131, 129, 129); padding: 3.7px 5px; color: rgb(100, 99, 99); font-size: 13px;" disabled value="off" style="cursor: pointer;"<i class="fa fa-download" download></i> SAVE
+                        <a href="sampleImage.png" type="button"  id="btn-save-dff" class="btn" style="background-color: rgb(199, 196, 191); border: 1px solid rgb(131, 129, 129); padding: 3.7px 5px; color: rgb(100, 99, 99); font-size: 13px;"  value="off" style="cursor: pointer;"<i class="fa fa-download" download></i> SAVE
                             DIFFRACTOGRAM</a>
                 </div>
 
