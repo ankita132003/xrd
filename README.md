@@ -4,7 +4,7 @@
 <b>Discipline | <b> Material Science and Engineering
 :--|:--|
 <b> Lab | <b> Characterization of Materials
-<b> Experiment|     <b> XRD (X-Ray Diffraction) Simulation
+<b> Experiment|     <b> Determination of Precious Lattice Parameter of FCC and BCC phases using X-ray diffraction
 
 
 ### About the Experiment 
