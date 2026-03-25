@@ -13,12 +13,10 @@ X-Ray Diffraction (XRD) is a powerful analytical technique used to determine the
 
 ---
 
-### Developer Information
+### Department
 
-| **Name of Developer** | **Prof. Kantesh Balani** |
-|:--|:--|
 | **Institute** | **Indian Institute of Technology, Kanpur** |
-| **Email id** | **kbalani@iitk.ac.in** |
+|:--|:--|
 | **Department** | **Material Science and Engineering** |
 
 ---
