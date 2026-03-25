@@ -6,12 +6,6 @@
 
 ---
 
-### About the Experiment  
-
-Fill a brief description of this experiment here.  
-
----
-
 **Institute** | Indian Institute of Technology, Kanpur  
 :--|:--  
 **Department** | Material Science and Engineering  
