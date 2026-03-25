@@ -1,8 +1,7 @@
 ## Introduction  
 
-**Discipline** | Material Science and Engineering  
-:--|:--  
 **Lab** | Characterization of Materials  
+:--|:--  
 **Experiment** | Determination of Precise Lattice Parameter of FCC and BCC Phases using X-ray Diffraction  
 
 ---
