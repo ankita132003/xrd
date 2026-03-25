@@ -4,7 +4,7 @@
 <b>Discipline | <b> Material Science and Engineering
 :--|:--|
 <b> Lab | <b> Characterization of Materials
-<b> Experiment|     <b> Advanced Imaging modes of SEM (BSE (Compositional & Topograpgy), TLD, Multiple Elemental mapping and Selected area electron channeling, EBSD)
+<b> Experiment|     <b> XRD (X-Ray Diffraction) Simulation
 
 
 ### About the Experiment 
